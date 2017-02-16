@@ -237,7 +237,7 @@ module Racc
     end
 
     def unique_separator(id)
-      sep = "...end #{id}/module_eval..."
+      sep = String.new "...end #{id}/module_eval..."
       while @used_separator.key?(sep)
         sep.concat sprintf('%02x', rand(255))
       end
