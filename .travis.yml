@@ -7,12 +7,16 @@ before_script:
 language: ruby
 notifications:
   email:
-rvm:
-- 1.8.7
-- 1.9.3
-- 2.0.0
-- ruby-head
 script: rake travis
 matrix:
-  allow_failures:
-    - rvm: ruby-head
+  include:
+    - os: linux
+      rvm: 2.1.10
+    - os: linux
+      rvm: 2.2.5
+    - os: linux
+      rvm: 2.3.1
+    - os: linux
+      rvm: 2.4.0
+      env:
+        - RUBYOPT="--enable-frozen-string-literal --debug=frozen-string-literal"
