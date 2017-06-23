@@ -5,7 +5,7 @@ require 'hoe'
 
 gem 'rake-compiler', '>= 0.4.1'
 
-Hoe.plugin :debugging, :doofus, :git, :isolate, :gemspec
+Hoe.plugin :debugging, :doofus, :git, :isolate, :gemspec, :travis
 
 def java?
   /java/ === RUBY_PLATFORM
